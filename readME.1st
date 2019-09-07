@@ -1,0 +1,60 @@
+#
+# ---- check <image_file>.dmg content ----
+# 1. open image file with dbl_click
+# 2. take a look into new mounted drive
+#
+
+ls -la /Volumes/<new_mounted_drive/
+
+drwxrwxrwx@  1 admin  staff   16384 Sep 30  2015 .
+drwxr-xr-x+ 12 root   wheel     384 Aug 25 06:32 ..
+drwxrwxrwx   1 admin  staff    2048 Jul 27  2015 .Spotlight-V100
+-rwxrwxrwx   1 admin  staff  173623 Jul 22  2015 .VolumeIcon.icns
+drwxrwxrwx   1 admin  staff    2048 Sep 30  2015 .fseventsd
+drwxrwxrwx   1 admin  staff    2048 Sep 28  2015 BBS
+drwxrwxrwx   1 admin  staff    2048 Jul 22  2015 System
+-rwxrwxrwx   1 admin  staff  121420 Sep 30  2015 boot.efi
+
+#
+# File boot.efi and Folders BBS and System must be present
+#
+
+#
+# ToDo
+#
+# 1. cd 'to_folder_with_<image_file>'
+# 2. get the /dev/disk[x] number of your USB disk
+#
+
+cd <folder_name>
+diskutil list						# <remember> /dev/disk[x]
+
+#
+# 3. convert dmg into iso
+# 4. burn USB drive
+#
+
+hdiutil convert <image_file>.dmg -format UDTO -o <image_file>.iso
+
+ls -la
+
+#
+# if your new converted file has extension ".iso.cdr" then rename it 
+#
+
+mv <image_file>.iso.cdr <image_file>.iso
+
+#
+# now you are ready to 'burn' ISO image to USB and make them bootable
+#
+
+sudo dd if=<image_file>.iso of=/dev/disk[x]  bs=1m 
+
+#
+# 5. boot with PowerUp + Alt
+# 6. select BBS boot icon
+# 7. follow instructions
+#
+# 8. your mac should be serialized by now
+#
+
