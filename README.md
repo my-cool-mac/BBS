@@ -4,7 +4,7 @@ Blank-Board-Serializer used to burn SN into blank logic board (for Apple org boa
 First, after you. downloaded this repo & unzip iso file - create bootable USB memory stick:
 
 
-[A].from mac os command line:
+#From mac os command line:
 
 
 [1]$> cd ~/Downloads                                   # move to folder with downloaded BBS* files
