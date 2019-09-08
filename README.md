@@ -7,12 +7,12 @@ First, after you. downloaded this repo & unzip iso file - create bootable USB me
 # From mac os command line:
 
 
-[1]$> cd ~/Downloads                                   # move to folder with downloaded BBS* files
+[1]$> cd ~/Downloads                                         # move to folder with downloaded BBS* files
 
 
 if you want to create your own BBS.iso file [2] else [3]:
 
-[2]$> hdiutil convert BBS.dmg -format UDTO -o BBS.iso  # create bootable iso image
+[2]$> hdiutil convert BBS.dmg -format UDTO -o BBS.iso         # create bootable iso image
 
 
 Insert USB memory stick into USB port and look after /dev/disk[number] using
